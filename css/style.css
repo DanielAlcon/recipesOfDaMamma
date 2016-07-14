@@ -4,10 +4,17 @@ html {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	height: 100%;
 }
 
-body{
+body {
 	background-color: rgba(0, 0, 0, 0.5);
+	background-size: 100%;
+	height: 100%
+}
+
+#brand-logo {
+	
 }
 
 .login {
