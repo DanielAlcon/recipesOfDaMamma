@@ -20,17 +20,14 @@ function ajaxRequest(url, func1, func2){
   $.ajax({
             url: url, 
             dataType:"json",
+            headers: {
+            	"X-Yummly-App-ID": "4f8d5f5a",
+            	"X-Yummly-App-Key": "15ca836c85d71216be87d521578d34d8"
+            },
             beforeSend:func1,
         }).done(func2)
           .fail(failFunction);
 }
-
-headers: {
-		X-Yummly-App-ID:app-id
-        "My-First-Header":"first value",
-        X-Yummly-App-Key:app-key
-        "My-Second-Header":"second value"
-    }
 
 
 function search(){

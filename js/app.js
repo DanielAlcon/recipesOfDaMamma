@@ -24,6 +24,14 @@ app.config(['$routeProvider',function($routeProvider) {
 }]);
 
 app.controller('HomeViewController', ['$scope', function($scope){
+
+}]);
+
+//Active menu
+app.controller("menuController",["$scope","$location",function($scope,$location){
+    $scope.isActive = function (viewLocation) { 
+       return viewLocation === $location.path();
+   };
 }]);
 
 app.controller('LoginViewController', ['$scope',function($scope){

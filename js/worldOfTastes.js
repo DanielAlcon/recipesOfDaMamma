@@ -4,6 +4,12 @@ function onSignIn(googleUser) {
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail());
+  // comprobar ID, != undefined o null, usar location="la rutaque yo quiera"
+  var user = profile.getId();
+  if (user != undefined) {
+    window.location.href="#/";
+    //show botón de signout
+  }
 }
 
 function signOut() {
