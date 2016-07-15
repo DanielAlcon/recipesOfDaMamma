@@ -3,8 +3,16 @@ var app = angular.module('recipesApp', ['ngRoute']);
 app.config(['$routeProvider',function($routeProvider) {
   $routeProvider
   .when('/', {
-    templateUrl: 'views/login.html',
+    templateUrl: 'views/sample_search.html',
     controller: 'HomeViewController'
+  })
+  .when('/login', {
+    templateUrl: 'views/login.html',
+    controller: 'LoginViewController'
+  })
+  .when('/register', {
+    templateUrl: 'views/register.html',
+    controller: 'RegisterViewController'
   })/*
   .when('/expenses/edit/:id' , {
     templateUrl: 'views/expensesForm.html',
@@ -16,6 +24,14 @@ app.config(['$routeProvider',function($routeProvider) {
 }]);
 
 app.controller('HomeViewController', ['$scope', function($scope){
+}]);
+
+app.controller('LoginViewController', ['$scope',function($scope){
+
+}]);
+
+app.controller('RegisterViewController', ['$scope',function($scope){
+
 }]);
 
 app.directive('googleLogin', function(){

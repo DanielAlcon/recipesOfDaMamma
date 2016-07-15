@@ -20,6 +20,10 @@ body {
 .login {
 	color: white;
 }
+
+.card {
+	color: white;
+}
 .footer {
 	position: absolute;
 	bottom: 0;
