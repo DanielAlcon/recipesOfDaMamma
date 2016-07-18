@@ -3,7 +3,7 @@ var app = angular.module('recipesApp', ['ngRoute']);
 app.config(['$routeProvider',function($routeProvider) {
   $routeProvider
   .when('/', {
-    templateUrl: 'views/sample_search.html',
+    templateUrl: 'views/search_page.html',
     controller: 'HomeViewController'
   })
   .when('/login', {
