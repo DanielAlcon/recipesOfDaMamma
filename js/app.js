@@ -47,12 +47,19 @@ app.directive('wtsGoogleLogin', function(){
         element.append(scriptTag);
     };
 
-    // var injectScript2 = function(element) {
-    //     var scriptTag = angular.element(document.createElement('script'));
-    //     scriptTag.attr('charset', 'utf-8');
-    //     scriptTag.attr('src', 'https://apis.google.com/js/platform.js', 'async', 'defer');
-    //     element.append(scriptTag);
-    // };
+    return {
+        link: function(scope, element) {
+            injectScript(element);
+        }
+    };
+});
+
+app.directive('wtsSearchFilters', function(){
+	var injectScript = function(element) {
+        var scriptTag = angular.element(document.createElement('script'));
+        scriptTag.attr('src', 'link/to/the/script');
+        element.append(scriptTag);
+    };
 
     return {
         link: function(scope, element) {

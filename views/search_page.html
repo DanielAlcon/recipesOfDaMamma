@@ -1,11 +1,11 @@
-<div class="main-search">
+<wtsSearchFilters class="main-search">
 	<div class="row search-box">
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Search for...">
+				<input type="text" class="form-control" placeholder="Search for..." id="searchRecipe">
 				<span class="input-group-btn">
-					<button class="btn btn-default" type="button">Go!</button>
+					<button class="btn btn-default" type="button" id="searchButton">Go!</button>
 				</span>
 			</div><!-- /input-group -->
 		</div><!-- /.col-lg-6 -->
@@ -14,19 +14,19 @@
 	<div class="row filters-box">
 		<div class="col-md-3">
 			<div class="checkbox-pictures" id="pictures">
-				<label><input type="checkbox" value="pictures">Only with pictures</label>
+				<label><input type="checkbox" id="pictures">Only with pictures</label>
 			</div>	
 		</div>
 		<div class="col-md-3">
-			<div class="input-group" id="included-ingredients">
+			<div class="input-group" >
 				<h6>With ingredients</h6>
-				<input type="text" class="form-control" placeholder="Ingredients to include" aria-describedby="basic-addon1">
+				<input type="text" class="form-control" id="included-ingredients" placeholder="Ingredients to include" aria-describedby="basic-addon1">
 			</div>
 		</div>
 		<div class="col-md-3">
-			<div class="input-group" id="excluded-ingredients">
+			<div class="input-group" >
 				<h6>Without ingredients</h6>
-				<input type="text" class="form-control" placeholder="Ingredients to exclude" aria-describedby="basic-addon1">
+				<input type="text" class="form-control" id="excluded-ingredients" placeholder="Ingredients to exclude" aria-describedby="basic-addon1">
 			</div>
 		</div>
 		<div class="col-md-3">
@@ -157,30 +157,28 @@
 			<div class="checkbox-alergies" id="moroccan">
 				<label><input type="checkbox" value="moroccan"> Moroccan</label>	
 			</div>
-	<div class="checkbox-alergies" id="irish">
+			<div class="checkbox-alergies" id="irish">
 				<label><input type="checkbox" value="irish"> Irish</label>	
 			</div>
-<div class="checkbox-alergies" id="japanese">
+			<div class="checkbox-alergies" id="japanese">
 				<label><input type="checkbox" value="japanese"> Japanese</label>	
 			</div>
-<div class="checkbox-alergies" id="cuban">
+			<div class="checkbox-alergies" id="cuban">
 				<label><input type="checkbox" value="cuban"> Cuban</label>	
 			</div>
-<div class="checkbox-alergies" id="hawaiin">
+			<div class="checkbox-alergies" id="hawaiin">
 				<label><input type="checkbox" value="hawaiin"> Hawaiin</label>	
 			</div>
-<div class="checkbox-alergies" id="swedish">
+			<div class="checkbox-alergies" id="swedish">
 				<label><input type="checkbox" value="swedish"> Swedish</label>	
 			</div>
-<div class="checkbox-alergies" id="hungarian">
+			<div class="checkbox-alergies" id="hungarian">
 				<label><input type="checkbox" value="hungarian"> Hungarian</label>	
 			</div>
-<div class="checkbox-alergies" id="portugese">
+			<div class="checkbox-alergies" id="portugese">
 				<label><input type="checkbox" value="portugese"> Portugese</label>	
 			</div>
 		</div>
 	</div>
+</wtsSearchFilters>
 
-
-
-</div>
