@@ -31,7 +31,7 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li ng-class="{ active: isActive('/login')}"><a href="#/login">Login <span class="sr-only">(current)</span></a></li>
+						<li ng-class="{ active: isActive('/login')}" id="logged-in"><a href="#/login">Login <span class="sr-only">(current)</span></a></li>
 						<li ng-class="{ active: isActive('/register')}"><a href="#/register">Register</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -69,7 +69,6 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 	</header>
-	<a href="#" onclick="signOut();">Sign out</a>	
 	<div class="container-fluid" ng-view>
 	
 		

@@ -24,7 +24,6 @@ app.config(['$routeProvider',function($routeProvider) {
 }]);
 
 app.controller('HomeViewController', ['$scope', function($scope){
-
 }]);
 
 //Active menu
@@ -35,14 +34,12 @@ app.controller("menuController",["$scope","$location",function($scope,$location)
 }]);
 
 app.controller('LoginViewController', ['$scope',function($scope){
-
 }]);
 
 app.controller('RegisterViewController', ['$scope',function($scope){
-
 }]);
 
-app.directive('googleLogin', function(){
+app.directive('wtsGoogleLogin', function(){
 	var injectScript = function(element) {
         var scriptTag = angular.element(document.createElement('script'));
         scriptTag.attr('charset', 'utf-8');
