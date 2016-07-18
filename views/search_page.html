@@ -1,5 +1,5 @@
 <div class="main-search">
-	<div class="row">
+	<div class="row search-box">
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 			<div class="input-group">
@@ -11,4 +11,57 @@
 		</div><!-- /.col-lg-6 -->
 		<div class="col-md-2"></div>
 	</div>
+	<div class="row filters-box">
+		<div class="col-md-3">
+			<div class="checkbox-pictures" id="pictures">
+				<label><input type="checkbox" value="pictures">Only with pictures</label>
+			</div>	
+		</div>
+		<div class="col-md-3">
+			<div class="input-group" id="included-ingredients">
+				<h6>With ingredients</h6>
+				<input type="text" class="form-control" placeholder="Ingredients to include" aria-describedby="basic-addon1">
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="input-group" id="excluded-ingredients">
+				<h6>Without ingredients</h6>
+				<input type="text" class="form-control" placeholder="Ingredients to exclude" aria-describedby="basic-addon1">
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="checkbox-alergies" id="">
+				<h6>Acceptable for allergies:</h6>
+				<label><input type="checkbox" value="dairy"> Dairy</label>
+			</div>
+			<div class="checkbox-alergies" id="egg">
+				<label><input type="checkbox" value="egg"> Egg</label>
+			</div>
+			<div class="checkbox-alergies" id="gluten">
+				<label><input type="checkbox" value="gluten"> Gluten</label>
+			</div>
+			<div class="checkbox-alergies" id="peanut">
+				<label><input type="checkbox" value="peanut"> Peanut</label>
+			</div>
+			<div class="checkbox-alergies" id="seafood">
+				<label><input type="checkbox" value="seafood"> Seafood</label>
+			</div>
+			<div class="checkbox-alergies" id="sesame">
+				<label><input type="checkbox" value="sesame"> Sesame</label>
+			</div>
+			<div class="checkbox-alergies" id="soy">
+				<label><input type="checkbox" value="soy"> Soy</label>
+			</div>			
+			<div class="checkbox-alergies" id="sulfite">
+				<label><input type="checkbox" value="sulfite"> Sulfite</label>
+			</div>			
+			<div class="checkbox-alergies" id="tree-nut">
+				<label><input type="checkbox" value="tree-nut"> Tree Nut</label>
+			</div>			
+			<div class="checkbox-alergies" id="wheat">
+				<label><input type="checkbox" value="wheat"> Wheat</label>
+			</div>
+		</div>
+	</div>
+
 </div>
