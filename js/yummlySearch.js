@@ -1,12 +1,12 @@
-"use strict";
-
 var searchQuery;
 
 $("#searchButton").on("click", function(e){
 	e.preventDefault();
 	searchText = encodeURI($("#searchRecipe").val());
-	search();
-	$("#searchRecipe").val("");
+	console.log("search button ok");
+	console.log(searchText);
+/*	search();
+$("#searchRecipe").val("");*/
 });
 
 function searchOnEnter(e){
@@ -18,7 +18,7 @@ function searchOnEnter(e){
 		return false;
 	}
 	return true;
-};
+}
 
 function ajaxRequest(url, func1, func2){
 	$.ajax({
@@ -36,22 +36,27 @@ function ajaxRequest(url, func1, func2){
 
 function search(){
 	var searchEndpoint = "http://api.yummly.com/v1/api/recipes?&q=" + searchText;
-	var searchLog = function(){console.log("searching recipe")};
-
+	var searchLog = function(){
+		console.log("searching recipe");
+	};
 	withPictures();
 	includeIngredients();
 	excludeIngredients();
+	allergies();
+	diets();
+	includedCuisines();
+	excludedCuisines();
 
 	ajaxRequest(searchQuery, searchLog, successFunction);
 }
 
 function failFunction(request, textStatus, errorThrown) {
 	alert("An error occurred during your request: " + request.status + " " + textStatus + " " + errorThrown);
-};
+}
 
 function successFunction(){
 	console.log('success!!');
-};
+}
 
 function withPictures(){
 	if ($('#pictures').is(':checked')) {
@@ -78,7 +83,63 @@ function excludeIngredients(){
   	ingredientsToExclude = ingredientsToExclude.text().split(/ +/);
   	for (var i = 0; i<ingredientsToExclude.length; i++){
   		var excludedIngredient = encodeURI(ingredientsToExclude[i]);
-  		searchQuery = searchQuery + "&allowedIngredient[]=" + excludedIngredient;
+  		searchQuery = searchQuery + "&excludedIngredient[]=" + excludedIngredient;
   	}
   }
+}
+
+function allergies() {
+	var allergies = [];
+	$('.allergies:checkbox:checked').each(function() {
+		allergies.push($(this).val());
+	});
+	if (allergies != []) {
+		for (var i = 0; i<allergies.length; i++){
+			var allergy = encodeURI(allergies[i]);
+			searchQuery = searchQuery + "&allowedAllergy[]=" + allergy;
+		}
+	}	
+}
+
+/*function cookingTime(){
+
+}*/
+
+function diets(){
+	var diets =[];
+	$('.diets:checkbox:checked').each(function() {
+		diets.push($(this).val());
+	});
+	if (diets != []) {
+		for (var i = 0; i<diets.length; i++){
+			var diet = encodeURI(diets[i]);
+			searchQuery = searchQuery + "&allowedAllergy[]=" + diet;
+		}
+	}	
+}
+
+function includedCuisines(){
+	var includedCuisines =[];
+	$('.included-cuisines:checkbox:checked').each(function() {
+		includedCuisines.push($(this).val());
+	});
+	if (includedCuisines != []) {
+		for (var i = 0; i<includedCuisines.length; i++){
+			var includedCuisine = encodeURI(includedCuisines[i]);
+			searchQuery = searchQuery + "&allowedCuisine[]=" + includedCuisine;
+		}
+	}	
+}
+
+function excludedCuisines(){
+	var excludedCuisines =[];
+	$('.excluded-cuisines:checkbox:checked').each(function() {
+		excludedCuisines.push($(this).val());
+	});
+	if (excludedCuisines != []) {
+		for (var i = 0; i<excludedCuisines.length; i++){
+			var excludedCuisine = encodeURI(excludedCuisines[i]);
+			searchQuery = searchQuery + "&excludedCuisine[]=" + excludedCuisine;
+		}
+	}	
 }

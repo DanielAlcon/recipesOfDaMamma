@@ -1,4 +1,4 @@
-var app = angular.module('recipesApp', ['ngRoute']);
+var app = angular.module('recipesApp', ['ngRoute', 'ngAnimate', 'ngTouch', 'ui.bootstrap']);
 
 app.config(['$routeProvider',function($routeProvider) {
   $routeProvider
@@ -12,6 +12,10 @@ app.config(['$routeProvider',function($routeProvider) {
   })
   .when('/register', {
     templateUrl: 'views/register.html',
+    controller: 'RegisterViewController'
+  })
+  .when('/recipe', {
+    templateUrl: 'views/recipe_template.html',
     controller: 'RegisterViewController'
   })/*
   .when('/expenses/edit/:id' , {
@@ -39,6 +43,16 @@ app.controller('LoginViewController', ['$scope',function($scope){
 app.controller('RegisterViewController', ['$scope',function($scope){
 }]);
 
+app.controller('AccordionCtrl', function($scope) {
+	$scope.oneAtATime = true;
+});
+
+// app.controller('TimeButtonsCtrl', function ($scope) {
+
+//   $scope.radioModel = 'Middle';
+// });
+
+// load google login
 app.directive('wtsGoogleLogin', function(){
 	var injectScript = function(element) {
         var scriptTag = angular.element(document.createElement('script'));
@@ -54,16 +68,30 @@ app.directive('wtsGoogleLogin', function(){
     };
 });
 
-app.directive('wtsSearchFilters', function(){
+// NO FUNCIONA!!!
+// load search js
+/*app.directive('wtsSearchFilters', function(){
 	var injectScript = function(element) {
         var scriptTag = angular.element(document.createElement('script'));
-        scriptTag.attr('src', 'link/to/the/script');
+        scriptTag.attr('src', './js/yummlySearch.js');
         element.append(scriptTag);
+    };
+
+    var injectScript2 = function(element) {
+        var scriptTag2 = angular.element(document.createElement('script'));
+        scriptTag2.attr('src', './js/.js');
+        element.append(scriptTag2);
     };
 
     return {
         link: function(scope, element) {
             injectScript(element);
+            injectScript2(element);
         }
     };
-});
+});*/
+
+// 1- include the custom javascript files in the main page (from the server)
+// 2- create another html file just for the canvas, and put the #container and #json there
+// 3- in the subpage, include the canvas html  <div ng-include src="'/public/canvas/canvas.html'" onload="canvasReady()"></div>
+// 4- call the starting function of custom javascript inside $scope.canvasReady() function

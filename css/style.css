@@ -13,6 +13,10 @@
 	height: 100%
 }*/
 
+.input-group.panel.ng-scope.ng-isolate-scope.panel-default {
+    width: 100%;
+}
+
 #brand-logo {
 	
 }
