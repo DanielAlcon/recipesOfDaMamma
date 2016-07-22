@@ -318,6 +318,8 @@
 				var searchLog = function(){
 					console.log("searching recipe");
 				};
+				$('#searchResults').empty();
+				recipes = [];
 				if (searchText != "") {
 					withPictures();
 					includeIngredients();
