@@ -15,7 +15,7 @@ app.config(['$routeProvider',function($routeProvider) {
     controller: 'RegisterViewController'
   })
   .when('/recipe', {
-    templateUrl: 'views/recipe_template.html',
+    templateUrl: 'views/recipe.html',
     controller: 'RegisterViewController'
   })/*
   .when('/expenses/edit/:id' , {
@@ -47,11 +47,6 @@ app.controller('AccordionCtrl', function($scope) {
 	$scope.oneAtATime = true;
 });
 
-// app.controller('TimeButtonsCtrl', function ($scope) {
-
-//   $scope.radioModel = 'Middle';
-// });
-
 // load google login
 app.directive('wtsGoogleLogin', function(){
 	var injectScript = function(element) {
@@ -77,16 +72,9 @@ app.directive('wtsGoogleLogin', function(){
         element.append(scriptTag);
     };
 
-    var injectScript2 = function(element) {
-        var scriptTag2 = angular.element(document.createElement('script'));
-        scriptTag2.attr('src', './js/.js');
-        element.append(scriptTag2);
-    };
-
     return {
         link: function(scope, element) {
             injectScript(element);
-            injectScript2(element);
         }
     };
 });*/
